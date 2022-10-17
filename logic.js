@@ -38,10 +38,18 @@ function hello(error,src){
         return
     }
     alert('Hello WOrld!'+src);
-    
 }
 
 function goodMorning(src){
     alert('Hello WOrld!');
 }
 loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",hello);
+
+
+//Video number 53
+//Callback Hell OR Pyramid of Doom
+//
+
+//Video number 54
+//Intro to promises
+ 
