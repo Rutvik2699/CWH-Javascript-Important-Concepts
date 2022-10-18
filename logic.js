@@ -54,14 +54,48 @@
 //Intro to promises
  
 
-let promise = new Promise(function(resolve,reject){
-    alert("Hello")
-    resolve(56)
-})
-console.log("Hello")
-setTimeout(function(){
-    console.log("Hello in 2 seconds")
-},2000)
+// let promise = new Promise(function(resolve,reject){
+//     alert("Hello")
+//     resolve(56)
+// })
+// console.log("Hello")
+// setTimeout(function(){
+//     console.log("Hello in 2 seconds")
+// },2000)
 
-console.log("My name is "+"John")
-console.log(promise)
+// console.log("My name is "+"John")
+// console.log(promise)
+
+
+//Video number 55
+//Promise .then() and .catch()
+
+let p1 = new Promise((resolve,reject)=>{
+    console.log("promise is pending")
+    setTimeout(()=>{
+      //  console.log("I am a promise and I am resolved")
+        resolve(true)
+    },5000)
+})
+
+let p2 = new Promise((resolve,reject)=>{
+    console.log("promise is pending")
+    setTimeout(()=>{
+       // console.log("I am a promise and I am rejected")
+        reject(new Error("I am an error"))
+    },5000)
+})
+p1.then((value)=>{
+    console.log(value)
+})
+
+// p2.catch((error)=>{
+//     console.log(value)
+// })
+
+
+p2.then((value)=>{
+    console.log(value)
+},(error)=>{
+    console.log(error)
+})
