@@ -128,24 +128,61 @@
 
 
 
-const loadScript =(src)=>{
-    return new Promise((resolve,reject)=>{
-    let script=document.createElement("script")
-    script.type="text/javascript"
-    script.src=src
-    document.body.appendChild(script)
-    script.onload=()=>{
-            resolve(1)
-    } 
-    script.onerror=()=>{reject(0)}
-})
-}
+// const loadScript =(src)=>{
+//     return new Promise((resolve,reject)=>{
+//     let script=document.createElement("script")
+//     script.type="text/javascript"
+//     script.src=src
+//     document.body.appendChild(script)
+//     script.onload=()=>{
+//             resolve(1)
+//     } 
+//     script.onerror=()=>{reject(0)}
+// })
+// }
 
-let p1 = loadScript("https://www.youtbe.com/c/CodeWithHarry/videos") 
-p1.then((value)=>{
-    console.log(value)
-}).then((value)=>{
-    console.log("Second script ready")
-}).catch((error)=>{
-    console.log("we are sorry but we are having problem loading the script")
+// let p1 = loadScript("https://www.youtbe.com/c/CodeWithHarry/videos") 
+// p1.then((value)=>{
+//     console.log(value)
+// }).then((value)=>{
+//     console.log("Second script ready")
+// }).catch((error)=>{
+//     console.log("we are sorry but se are having problem loading the script")
+// })
+
+
+
+//Video 57 attaching multiple handlers to a promise
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//        // alert("Hey I am resolved")
+//         resolve(1);
+//     },2000)
+// }) 
+// p1.then(()=>{
+//     console.log("Congratulations this promise is now resolved")
+// })
+// //Whichever handler is attached first will be resolved
+// p1.then(()=>{
+//     console.log("Hurray")
+// })
+
+
+let p1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       // alert("Hey I am resolved")
+        resolve(1);
+    },2000)
+}) 
+p1.then(()=>{
+    console.log("Congratulations this promise is now resolved")
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(4)
+        },6000)
+    })
+}).then((value)=>{console.log(value)})
+//Whichever handler is attached first will be resolved
+p1.then(()=>{
+    console.log("Hurray")
 })
