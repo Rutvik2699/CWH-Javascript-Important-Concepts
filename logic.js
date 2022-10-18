@@ -168,21 +168,72 @@
 // })
 
 
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//        // alert("Hey I am resolved")
+//         resolve(1);
+//     },2000)
+// }) 
+// p1.then(()=>{
+//     console.log("Congratulations this promise is now resolved")
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(4)
+//         },6000)
+//     })
+// }).then((value)=>{console.log(value)})
+// //Whichever handler is attached first will be resolved
+// p1.then(()=>{
+//     console.log("Hurray")
+// })
+
+
+
+//Video number 58 
+//Promise API
+
 let p1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
-       // alert("Hey I am resolved")
-        resolve(1);
-    },2000)
-}) 
-p1.then(()=>{
-    console.log("Congratulations this promise is now resolved")
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(4)
-        },6000)
-    })
-}).then((value)=>{console.log(value)})
-//Whichever handler is attached first will be resolved
-p1.then(()=>{
-    console.log("Hurray")
+        resolve("Value 1");
+    },1000);
+});
+
+
+let p2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Value 2");
+        // reject(new Error("error"))
+    },2000);
+});
+
+let p3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Value 3");
+    },3000);
+});
+
+// p1.then((value)=>{
+//     console.log(value)
+// })
+
+// p2.then((value)=>{
+//     console.log(value)
+// })
+
+// p3.then((value)=>{
+//     console.log(value)
+// })
+
+//let promise_all = Promise.all([p1,p2,p3])
+//If one fails other are executed
+//let promise_all = Promise.allSettled([p1,p2,p3])
+
+//Fastest one is resolved first 
+//let promise_all = Promise.race([p1,p2,p3])
+//
+// let promise_all = Promise.any([p1,p2,p3])
+let promise_all = Promise.resolve(6)
+// let promise_all = Promise.reject("Hey")
+promise_all.then((value)=>{
+    console.log(value)
 })
