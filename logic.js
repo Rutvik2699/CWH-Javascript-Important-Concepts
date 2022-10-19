@@ -192,25 +192,25 @@
 //Video number 58 
 //Promise API
 
-let p1 = new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        resolve("Value 1");
-    },1000);
-});
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("Value 1");
+//     },1000);
+// });
 
 
-let p2 = new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        resolve("Value 2");
-        // reject(new Error("error"))
-    },2000);
-});
+// let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("Value 2");
+//         // reject(new Error("error"))
+//     },2000);
+// });
 
-let p3 = new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        resolve("Value 3");
-    },3000);
-});
+// let p3 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("Value 3");
+//     },3000);
+// });
 
 // p1.then((value)=>{
 //     console.log(value)
@@ -232,8 +232,43 @@ let p3 = new Promise((resolve,reject)=>{
 //let promise_all = Promise.race([p1,p2,p3])
 //
 // let promise_all = Promise.any([p1,p2,p3])
-let promise_all = Promise.resolve(6)
-// let promise_all = Promise.reject("Hey")
-promise_all.then((value)=>{
+// let promise_all = Promise.resolve(6)
+// // let promise_all = Promise.reject("Hey")
+// promise_all.then((value)=>{
+//     console.log(value)
+// })
+
+
+//Video number 59 Async/Await in JS
+//An async function always return a promise
+
+
+
+async function harry(){
+    let delhiWeather = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("27 Deg")
+        },1000)
+    })
+    
+    let bangloreWeather = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("21 Deg")
+        },5000)
+    })
+ 
+    // delhiWeather.then(alert)
+    // bangloreWeather.then(alert)
+    console.log("Fetching Delhi weather ")
+    let delhiW=await delhiWeather
+    console.log("Fetched delhi  weather "+delhiW)
+    console.log("Fetching banglore weather ")
+    let bangloreW=await bangloreWeather
+    console.log("Fetched banglore  weather "+bangloreW)
+    return [delhiW,bangloreW]
+}
+console.log("welcome to weather control room")
+let a = harry()
+a.then((value)=>{
     console.log(value)
 })
