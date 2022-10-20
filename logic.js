@@ -278,20 +278,45 @@
 
 
 
-try{
-    let age = prompt("Enter your age")
-    // throw new Error("Harry is not good")
-    age = Number.parseInt(age)
-    if(age>120){
-        throw new ReferenceError("This is probably not true52")
-        }
-}catch(error){
-    console.log(error.message)
-    console.log(error.name)    
-    console.log(error.stack)    
+// try{
+//     let age = prompt("Enter your age")
+//     // throw new Error("Harry is not good")
+//     age = Number.parseInt(age)
+//     if(age>120){
+//         throw new ReferenceError("This is probably not true52")
+//         }
+// }catch(error){
+//     console.log(error.message)
+//     console.log(error.name)    
+//     console.log(error.stack)    
 
-}
+// }
 
-console.log("The script is still number")
+// console.log("The script is still number")
+
+//=====================================================================================
+
+//Video number 62 //The finally clause
+//It will run in all cases
+const f =()=>{
+    try{
+        let a =0;
+        console.log(program)
+        console.log("Program ran successfully")
+        return
+    }
+    catch(err){
+        console.log("This is an error")
+        console.log(p)
+    }
+    //Finally will run even if function fails or is successfull
+    finally{
+        console.log("I am a good boy")
+        //Close the file
+        //Exit the loop
+        //write to the log file
+    }} 
+
+f()
 
 
