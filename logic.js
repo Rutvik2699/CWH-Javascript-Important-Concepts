@@ -298,25 +298,36 @@
 
 //Video number 62 //The finally clause
 //It will run in all cases
-const f =()=>{
-    try{
-        let a =0;
-        console.log(program)
-        console.log("Program ran successfully")
-        return
-    }
-    catch(err){
-        console.log("This is an error")
-        console.log(p)
-    }
-    //Finally will run even if function fails or is successfull
-    finally{
-        console.log("I am a good boy")
-        //Close the file
-        //Exit the loop
-        //write to the log file
-    }} 
+// const f =()=>{
+//     try{
+//         let a =0;
+//         console.log(program)
+//         console.log("Program ran successfully")
+//         return
+//     }
+//     catch(err){
+//         console.log("This is an error")
+//         console.log(p)
+//     }
+//     //Finally will run even if function fails or is successfull
+//     finally{
+//         console.log("I am a good boy")
+//         //Close the file
+//         //Exit the loop
+//         //write to the log file
+//     }} 
 
-f()
+// f()
 
+//=====================================================================================
+//Video 66 Fetch API
 
+let p = fetch("https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js")
+p.then((response)=>{
+    console.log(response.status)
+    console.log(response.ok)
+    console.log(response.headers)
+    return response.json()
+}).then((value2)=>{
+    console.log(value2)
+})
