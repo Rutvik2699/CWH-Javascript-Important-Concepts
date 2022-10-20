@@ -150,7 +150,7 @@
 //     console.log("we are sorry but se are having problem loading the script")
 // })
 
-
+//===================================================================================
 
 //Video 57 attaching multiple handlers to a promise
 // let p1 = new Promise((resolve,reject)=>{
@@ -187,7 +187,7 @@
 //     console.log("Hurray")
 // })
 
-
+//=================================================================================
 
 //Video number 58 
 //Promise API
@@ -238,37 +238,60 @@
 //     console.log(value)
 // })
 
-
+//===============================================================================
 //Video number 59 Async/Await in JS
 //An async function always return a promise
 
 
 
-async function harry(){
-    let delhiWeather = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve("27 Deg")
-        },1000)
-    })
+// async function harry(){
+//     let delhiWeather = new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve("27 Deg")
+//         },1000)
+//     })
     
-    let bangloreWeather = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve("21 Deg")
-        },5000)
-    })
+//     let bangloreWeather = new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve("21 Deg")
+//         },5000)
+//     })
  
-    // delhiWeather.then(alert)
-    // bangloreWeather.then(alert)
-    console.log("Fetching Delhi weather ")
-    let delhiW=await delhiWeather
-    console.log("Fetched delhi  weather "+delhiW)
-    console.log("Fetching banglore weather ")
-    let bangloreW=await bangloreWeather
-    console.log("Fetched banglore  weather "+bangloreW)
-    return [delhiW,bangloreW]
+//     // delhiWeather.then(alert)
+//     // bangloreWeather.then(alert)
+//     console.log("Fetching Delhi weather ")
+//     let delhiW=await delhiWeather
+//     console.log("Fetched delhi  weather "+delhiW)
+//     console.log("Fetching banglore weather ")
+//     let bangloreW=await bangloreWeather
+//     console.log("Fetched banglore  weather "+bangloreW)
+//     return [delhiW,bangloreW]
+// }
+// console.log("welcome to weather control room")
+// let a = harry()
+// a.then((value)=>{
+//     console.log(value)
+// })
+
+//====================================================================================
+//Video 60 and 61 // Error Handling and error object
+
+
+
+try{
+    let age = prompt("Enter your age")
+    // throw new Error("Harry is not good")
+    age = Number.parseInt(age)
+    if(age>120){
+        throw new ReferenceError("This is probably not true52")
+        }
+}catch(error){
+    console.log(error.message)
+    console.log(error.name)    
+    console.log(error.stack)    
+
 }
-console.log("welcome to weather control room")
-let a = harry()
-a.then((value)=>{
-    console.log(value)
-})
+
+console.log("The script is still number")
+
+
