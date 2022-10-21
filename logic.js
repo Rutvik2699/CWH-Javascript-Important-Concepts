@@ -385,19 +385,35 @@
 
 //===============================================================================
 //Video number 69 Local Storage
-localStorage.setItem("name","Rutvik")
+// localStorage.setItem("name","Rutvik")
 
-let key =prompt("Enter the key you want to set??")
-let value =prompt("Enter the value you want to set??")
+// let key =prompt("Enter the key you want to set??")
+// let value =prompt("Enter the value you want to set??")
 
-localStorage.setItem(key,value)
+// localStorage.setItem(key,value)
 
-console.log(`he value at ${key} is ${localStorage.getItem(key)}`)
+// console.log(`he value at ${key} is ${localStorage.getItem(key)}`)
 
-if(key=="red" || key == "blue"){
-    localStorage.removeItem(key)
-}
+// if(key=="red" || key == "blue"){
+//     localStorage.removeItem(key)
+// }
 
-if(key==0){
-    localStorage.clear()
+// if(key==0){
+//     localStorage.clear()
+// }
+
+
+//===============================================================================
+//Video number 70 Session storage
+
+sessionStorage.getItem("name")
+sessionStorage.clear()
+sessionStorage.removeItem("name")
+sessionStorage.setItem("name")
+sessionStorage.removeItem("name")
+
+
+window.onstorage=()=>{
+    alert("Changed")
+
 }
