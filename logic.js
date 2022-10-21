@@ -372,13 +372,32 @@
 //Cookeis are small strings of data stored directly into the browser
 
 
-console.log(document.cookie)
-document.cookie = "name=harry1122334400"
-document.cookie = "name2=harry11223344002"
-document.cookie = "name2=harry"
-let key = prompt("Enter yoru key")
-let value = prompt("Enter yoru value")
-document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+// console.log(document.cookie)
+// document.cookie = "name=harry1122334400"
+// document.cookie = "name2=harry11223344002"
+// document.cookie = "name2=harry"
+// let key = prompt("Enter yoru key")
+// let value = prompt("Enter yoru value")
+// document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
 
-//console.log(document.cookie)
-console.log(decodeURIComponent(document.cookie))
+// //console.log(document.cookie)
+// console.log(decodeURIComponent(document.cookie))
+
+//===============================================================================
+//Video number 69 Local Storage
+localStorage.setItem("name","Rutvik")
+
+let key =prompt("Enter the key you want to set??")
+let value =prompt("Enter the value you want to set??")
+
+localStorage.setItem(key,value)
+
+console.log(`he value at ${key} is ${localStorage.getItem(key)}`)
+
+if(key=="red" || key == "blue"){
+    localStorage.removeItem(key)
+}
+
+if(key==0){
+    localStorage.clear()
+}
