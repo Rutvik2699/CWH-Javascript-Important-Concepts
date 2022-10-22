@@ -406,14 +406,44 @@
 //===============================================================================
 //Video number 70 Session storage
 
-sessionStorage.getItem("name")
-sessionStorage.clear()
-sessionStorage.removeItem("name")
-sessionStorage.setItem("name")
-sessionStorage.removeItem("name")
+// sessionStorage.getItem("name")
+// sessionStorage.clear()
+// sessionStorage.removeItem("name")
+// sessionStorage.setItem("name")
+// sessionStorage.removeItem("name")
 
 
-window.onstorage=()=>{
-    alert("Changed")
+// window.onstorage=()=>{
+//     alert("Changed")
 
+// }
+
+
+
+//==================================================================================
+//Object Oriented Programming OOPS
+//Video 75 Prototype and __proto__ 
+
+let a ={
+    name:"Rutvik",
+    language:"Javascript",
+    run:()=>{
+        alert("Self run")
+    }
 }
+console.log(a)
+
+let p = {
+    run:()=>{
+        alert("run")
+    }
+}
+
+p.__proto__={
+    name:"Jackie"
+}
+
+a.__proto__=p
+a.run()
+
+console.log(a.name)
