@@ -424,26 +424,56 @@
 //Object Oriented Programming OOPS
 //Video 75 Prototype and __proto__ 
 
-let a ={
-    name:"Rutvik",
-    language:"Javascript",
-    run:()=>{
-        alert("Self run")
+// let a ={
+//     name:"Rutvik",
+//     language:"Javascript",
+//     run:()=>{
+//         alert("Self run")
+//     }
+// }
+// console.log(a)
+
+// let p = {
+//     run:()=>{
+//         alert("run")
+//     }
+// }
+
+// p.__proto__={
+//     name:"Jackie"
+// }
+
+// a.__proto__=p
+// a.run()
+
+// console.log(a.name)
+
+
+//===============================================================================
+//Classes and Object in JS // Video number 76
+
+
+class RailwayForm{
+    submit(){
+        alert(this.name+": Your form submitted for train number "+this.trainno)
     }
-}
-console.log(a)
-
-let p = {
-    run:()=>{
-        alert("run")
+    cancel(){
+        alert(this.name + ": This form is cancelled"+this.trainno)
     }
+    fill(givenname,traino){
+        this.name=givenname
+        this.trainno=traino
+    }
+
 }
-
-p.__proto__={
-    name:"Jackie"
-}
-
-a.__proto__=p
-a.run()
-
-console.log(a.name)
+//Create a form for harry
+let harryForm = new RailwayForm()
+//Fill the form with details
+harryForm.fill("Harry",123456)
+//
+let rohanForm = new RailwayForm()
+//create a form for Rohan's details
+rohanForm.fill("Rohan",0986765)
+harryForm.submit()
+rohanForm.submit()
+rohanForm.cancel()
