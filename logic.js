@@ -484,34 +484,68 @@
 
 
 //===============================================================================
-//Classes and Object in JS // Video number 77
+//Constructors in JS // Video number 77
 
 
 
-class RailwayForm {
-    constructor(givenname, trainno, address) {
-      console.log("CONSTRUCTOR CALLED..." + givenname + " " + trainno)
-      this.name = givenname
-      this.trainno = trainno
-      this.address = address
-    }
+// class RailwayForm {
+//     constructor(givenname, trainno, address) {
+//       console.log("CONSTRUCTOR CALLED..." + givenname + " " + trainno)
+//       this.name = givenname
+//       this.trainno = trainno
+//       this.address = address
+//     }
   
-    preview() {
-      alert(this.name + ": Your form is for Train number: " + this.trainno + " and your address is " + this.address)
-    }
+//     preview() {
+//       alert(this.name + ": Your form is for Train number: " + this.trainno + " and your address is " + this.address)
+//     }
   
-    submit() {
-      alert(this.name + ": Your form is submitted for train number: " + this.trainno)
-    }
+//     submit() {
+//       alert(this.name + ": Your form is submitted for train number: " + this.trainno)
+//     }
   
-    cancel() {
-      alert(this.name + ": This form is cancelled for train number: " + this.trainno)
-      this.trainno = 0
+//     cancel() {
+//       alert(this.name + ": This form is cancelled for train number: " + this.trainno)
+//       this.trainno = 0
+//     }
+//   }
+  
+//   let harryForm = new RailwayForm("Harry", 13488, "420, Pacific Ocean, Ocean, Bihar - 0000555")
+//   harryForm.preview()
+//   harryForm.submit()
+//   harryForm.cancel()
+//   harryForm.preview()
+
+
+//===============================================================================
+//Inheritance and Extends in JS // Video number 78
+
+class Animal {
+    constructor(name, color) {
+      this.name = name
+      this.color = color
+    }
+    run() {
+      console.log(this.name + " is running!")
+    }
+    shout() {
+      console.log(this.name + " is barking!")
     }
   }
   
-  let harryForm = new RailwayForm("Harry", 13488, "420, Pacific Ocean, Ocean, Bihar - 0000555")
-  harryForm.preview()
-  harryForm.submit()
-  harryForm.cancel()
-  harryForm.preview()
+  class Monkey extends Animal {
+    eatBanana() {
+      console.log(this.name + " is eating banana")
+    }
+    hide() {
+      console.log(`${this.name} is hiding`)
+    }
+  }
+  
+  let ani = new Animal("Bruno", "white")
+  let m = new Monkey("Chimpu", "orange")
+  
+  ani.shout()
+  m.eatBanana()
+  m.hide()
+  // ani.hide() //This will throw an error
