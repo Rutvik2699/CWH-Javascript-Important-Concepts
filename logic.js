@@ -453,27 +453,65 @@
 //Classes and Object in JS // Video number 76
 
 
-class RailwayForm{
-    submit(){
-        alert(this.name+": Your form submitted for train number "+this.trainno)
-    }
-    cancel(){
-        alert(this.name + ": This form is cancelled"+this.trainno)
-    }
-    fill(givenname,traino){
-        this.name=givenname
-        this.trainno=traino
-    }
+// class RailwayForm{
+//     submit(){
+//         alert(this.name+": Your form submitted for train number "+this.trainno)
+//     }
+//     cancel(){
+//         alert(this.name + ": This form is cancelled"+this.trainno)
+//     }
+//     fill(givenname,traino){
+//         this.name=givenname
+//         this.trainno=traino
+//     }
 
-}
-//Create a form for harry
-let harryForm = new RailwayForm()
-//Fill the form with details
-harryForm.fill("Harry",123456)
-//
-let rohanForm = new RailwayForm()
-//create a form for Rohan's details
-rohanForm.fill("Rohan",0986765)
-harryForm.submit()
-rohanForm.submit()
-rohanForm.cancel()
+// }
+// //Create a form for harry
+// let harryForm = new RailwayForm()
+// //Fill the form with details
+// harryForm.fill("Harry",123456)
+// let rohanForm1 = new RailwayForm()
+// let rohanForm2 = new RailwayForm()
+// //create a form for Rohan's details
+// rohanForm1.fill("Rohan",0986765)
+// rohanForm2.fill("Rohan",0912455)
+// harryForm.submit()
+// rohanForm1.submit()
+// rohanForm2.submit()
+// rohanForm1.cancel()
+
+
+
+
+//===============================================================================
+//Classes and Object in JS // Video number 77
+
+
+
+class RailwayForm {
+    constructor(givenname, trainno, address) {
+      console.log("CONSTRUCTOR CALLED..." + givenname + " " + trainno)
+      this.name = givenname
+      this.trainno = trainno
+      this.address = address
+    }
+  
+    preview() {
+      alert(this.name + ": Your form is for Train number: " + this.trainno + " and your address is " + this.address)
+    }
+  
+    submit() {
+      alert(this.name + ": Your form is submitted for train number: " + this.trainno)
+    }
+  
+    cancel() {
+      alert(this.name + ": This form is cancelled for train number: " + this.trainno)
+      this.trainno = 0
+    }
+  }
+  
+  let harryForm = new RailwayForm("Harry", 13488, "420, Pacific Ocean, Ocean, Bihar - 0000555")
+  harryForm.preview()
+  harryForm.submit()
+  harryForm.cancel()
+  harryForm.preview()
